@@ -42,9 +42,11 @@ class Task {
 
   async getCookie(field) {
     const userInfo = this.getUserStatus();
+    console.log('getCookie.userInfo',userInfo)
     const res = userInfo.cookie.split(';');
     const [tstr] = res.filter((f) => f.indexOf(field) != -1);
     let [_, jct] = tstr.split('=');
+    console.log(`取到的【${field}】为【${jct}】`)
     return jct;
   }
 
