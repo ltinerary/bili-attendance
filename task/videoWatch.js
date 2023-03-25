@@ -98,7 +98,7 @@ class videoWatch extends base {
         csrf: this.getCookie('bili_jct'),
       })
     );
-    if (result.code === 0) {
+    if (result?.code=== 0) {
       console.info('----- 视频播放成功 -----');
     } else {
       console.error('----- error 视频播放失败 -----' + result.message);
@@ -115,8 +115,8 @@ class videoWatch extends base {
         csrf: this.getCookie('bili_jct'),
       })
     );
-
-    if (result.code === 0) {
+    console.log("this.getCookie('bili_jct')",this.getCookie('bili_jct'))
+    if (result?.code === 0) {
       console.info('----- 视频分享成功 -----');
     } else {
       console.error('----- error 视频分享失败 -----' + result.message);

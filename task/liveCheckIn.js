@@ -14,7 +14,7 @@ class liveCheckIn extends base {
     const liveCheckInURL =
       'https://api.live.bilibili.com/xlive/web-ucenter/v1/sign/DoSign';
     let result = await this.request.get(liveCheckInURL);
-    if (+result.code === 0) {
+    if (+result?.code=== 0) {
       console.info(
         '----- [直播签到成功，本次获得] -----' + result.data.text.specialText
       );

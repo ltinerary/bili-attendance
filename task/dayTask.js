@@ -18,7 +18,7 @@ class dayTask extends base {
     const dayTaskURL = 'https://api.bilibili.com/x/member/web/exp/reward';
     let result = await this.get(dayTaskURL);
     console.log('result: ', result);
-    if (+result.code === 0) {
+    if (+result?.code=== 0) {
       console.info('----- 请求本日任务状态成功 -----');
       this.setUserStatus(result.data);
     } else {

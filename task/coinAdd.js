@@ -82,7 +82,7 @@ class coinAdd extends base {
     }
 
     const result = await this.request.post(coinAddURL, qs.stringify(params));
-    if (+result.code === 0) {
+    if (+result?.code=== 0) {
       console.info('----- [投币成功] -----');
       return false;
     }
