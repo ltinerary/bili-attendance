@@ -19,7 +19,8 @@ class silverToCoin extends base {
 
   async run() {
     const result = await this.request.get(this.silverToCoinURL);
-    if (result.code === 0) {
+    console.lof('silverToCoin',result)
+    if (result?.code === 0) {
       console.info('----- [银瓜子兑换硬币成功] -----');
     } else {
       console.info(`----- [银瓜子兑换硬币失败 原因是: ${result.msg}] -----`);
