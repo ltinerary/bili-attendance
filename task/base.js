@@ -42,7 +42,6 @@ class Task {
 
   async getCookie(field) {
     const userInfo = this.getUserStatus();
-    console.log('getCookie.userInfo',userInfo)
     const res = userInfo.cookie.split(';');
     const [tstr] = res.filter((f) => f.indexOf(field) != -1);
     let [_, jct] = tstr.split('=');
@@ -90,7 +89,7 @@ class Task {
     const result = await request.get(videoViewURL);
     if (+result?.code=== 0) {
       const owner = this._.get(result, 'data.owner.name');
-      return owner + ' ' + result.data.title;
+      return owner + ' ' + result?.data?.title;
     }
     return title;
   }

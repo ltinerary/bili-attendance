@@ -100,7 +100,7 @@ class coinAdd extends base {
       'https://api.bilibili.com/x/web-interface/archive/coins?bvid=' + bvid;
 
     const result = await this.request.get(isCoinURL, {}, 'data');
-    const multiply = result.multiply;
+    const multiply = result?.multiply;
     if (multiply <= 0) {
       return false;
     }

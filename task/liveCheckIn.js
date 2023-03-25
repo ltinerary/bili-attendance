@@ -16,10 +16,10 @@ class liveCheckIn extends base {
     let result = await this.request.get(liveCheckInURL);
     if (+result?.code=== 0) {
       console.info(
-        '----- [直播签到成功，本次获得] -----' + result.data.text.specialText
+        '----- [直播签到成功，本次获得] -----' + result?.data?.text?.specialText
       );
     } else {
-      console.info('----- [直播签到失败] ----- ' + result.message);
+      console.info('----- [直播签到失败] ----- ' + result?.message);
     }
   }
 
